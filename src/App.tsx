@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Stack } from "@mui/material";
+import "./App.css";
+import { ImagesList } from "./images-list";
+import { kittens, puppies } from "./puppies-and-kitties";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack
+      width="100vw"
+      height={"100vh"}
+      alignItems={"center"}
+      padding={"24px"}
+      gap="16px"
+    >
+      <ImagesList
+        images={puppies}
+        imageWidth={140}
+        imageHeight={100}
+        gapInPixels={8}
+        windowWidth={300}
+        intervalTime={1000}
+        speedInPixel={20}
+      />
+      <ImagesList
+        images={kittens}
+        imageWidth={80}
+        imageHeight={60}
+        gapInPixels={8}
+        windowWidth={300}
+        intervalTime={1000}
+        speedInPixel={10}
+      />
+    </Stack>
   );
 }
 
